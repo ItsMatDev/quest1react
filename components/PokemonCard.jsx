@@ -1,6 +1,14 @@
-/* eslint-disable react/prop-types */
-// eslint-disable-next-line react/prop-types
+import PropTypes from "prop-types";
+
+
 function PokemonCard ({ pokemon }) {
+
+    PokemonCard.propTypes = {
+        pokemon: PropTypes.shape({
+            name: PropTypes.string.isRequired,
+          imgSrc: PropTypes.string,}).isRequired,
+      }
+
          return (
             <figure>
             {pokemon.imgSrc ? (
