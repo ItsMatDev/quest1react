@@ -1,6 +1,6 @@
     import PropTypes from "prop-types";
 
-    function NavBar({ pokemonIndex, setPokemonIndex, pokemonList }) {
+    function NavBar({ pokemonIndex, setPokemonIndex, pokemonList}) {
 
         NavBar.propTypes = {
             pokemonIndex: PropTypes.number.isRequired,
@@ -9,20 +9,16 @@
                 PropTypes.shape({
                 name: PropTypes.string.isRequired,
                 imgSrc: PropTypes.string,
-                }))
+                })),
         }
 
         const handleClickMore = () => {
-        if (pokemonIndex > 0) {
-            setPokemonIndex(pokemonIndex - 1);
-        }
-        };
-    
-        const handleClickLess = () => {
-        if (pokemonIndex < pokemonList.length - 1) {
-            setPokemonIndex(pokemonIndex + 1);
-        }
-        };
+            setPokemonIndex(pokemonIndex + 1)
+          }
+        
+          const handleClickLess = () => {
+            setPokemonIndex(pokemonIndex - 1)
+          }
     
         return (
         <div className="navbar">
